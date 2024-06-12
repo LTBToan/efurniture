@@ -115,7 +115,12 @@ const Navbar = () => {
             className={styles.iconButton}
             onClick={() => navigate(`/search`)}
           >
-            <SearchOutlined style={{ color: "#FFF", fontSize: "150%" }} />
+            <SearchOutlined
+              style={{
+                color: "#FFF",
+                fontSize: "150%",
+              }}
+            />
           </button>
           {currentUser ? (
             <>
@@ -146,9 +151,7 @@ const Navbar = () => {
                   className={styles.iconButton}
                   onClick={() => navigate(`/profile/${currentUserId}`)}
                 >
-                  <UserOutlined
-                    style={{ color: "#ce8f2b", fontSize: "150%" }}
-                  />
+                  <UserOutlined style={{ color: "#FFF", fontSize: "150%" }} />
                 </button>
               </Tooltip>
               <Tooltip title="Log out">

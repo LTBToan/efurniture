@@ -7,9 +7,9 @@
   align-items: center;
   justify-content: flex-start;
   background-color: #000;
-  color: #FFF;
+  color: #fff;
   width: auto;
-  border: solid 1px #FFF;
+  border: solid 1px #fff;
   margin: 0 3%;
   min-width: 300px;
   transition: 0.4s;
@@ -51,4 +51,10 @@
 .error-message {
   color: red;
   margin-bottom: 10px;
+}
+
+.search {
+  width: 300px;
+  display: flex;
+  padding: 20px;
 }
