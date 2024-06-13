@@ -11,7 +11,7 @@ import {
   ExceptionOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, theme, Breadcrumb, Image } from "antd";
-import eFurniLogo from "../../assets/logos/eFurniLogo_transparent.png";
+import eFurniLogo from "../../assets/logos/logoDia.png";
 import Users from "../../components/Admin/User/Users";
 import Dashboard from "../../components/Admin/Dashboard/Dashboard";
 import Products from "../../components/Admin/Product/Products";
@@ -82,7 +82,7 @@ const Admin = () => {
           <Link to="/">
             <Image
               preview={false}
-              size={30}
+              size={10}
               src={eFurniLogo}
               className="logo"
             />

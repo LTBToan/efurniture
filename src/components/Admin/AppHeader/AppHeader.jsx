@@ -1,22 +1,22 @@
-import { BellFilled, MailOutlined } from "@ant-design/icons"
-import { Badge, Drawer, List, Space, Typography } from "antd"
-import { useEffect, useState } from "react"
-import { getComments, getOrders } from "../../../api/index"
+import { BellFilled, MailOutlined } from "@ant-design/icons";
+import { Badge, Drawer, List, Space, Typography } from "antd";
+import { useEffect, useState } from "react";
+import { getComments, getOrders } from "../../../api/index";
 
 function AppHeader() {
-  const [comments, setComments] = useState([])
-  const [orders, setOrders] = useState([])
-  const [commentsOpen, setCommentsOpen] = useState(false)
-  const [notificationsOpen, setNotificationsOpen] = useState(false)
+  const [comments, setComments] = useState([]);
+  const [orders, setOrders] = useState([]);
+  const [commentsOpen, setCommentsOpen] = useState(false);
+  const [notificationsOpen, setNotificationsOpen] = useState(false);
 
   useEffect(() => {
-    getComments().then(res => {
-      setComments(res.comments)
-    })
-    getOrders().then(res => {
-      setOrders(res.products)
-    })
-  }, [])
+    getComments().then((res) => {
+      setComments(res.comments);
+    });
+    getOrders().then((res) => {
+      setOrders(res.products);
+    });
+  }, []);
 
   return (
     <div className="AppHeader">
@@ -30,7 +30,7 @@ function AppHeader() {
           <MailOutlined
             style={{ fontSize: 24 }}
             onClick={() => {
-              setCommentsOpen(true)
+              setCommentsOpen(true);
             }}
           />
         </Badge>
@@ -38,7 +38,7 @@ function AppHeader() {
           <BellFilled
             style={{ fontSize: 24 }}
             onClick={() => {
-              setNotificationsOpen(true)
+              setNotificationsOpen(true);
             }}
           />
         </Badge>
@@ -47,14 +47,14 @@ function AppHeader() {
         title="Comments"
         visible={commentsOpen}
         onClose={() => {
-          setCommentsOpen(false)
+          setCommentsOpen(false);
         }}
         maskClosable
       >
         <List
           dataSource={comments}
-          renderItem={item => {
-            return <List.Item></List.Item>
+          renderItem={(item) => {
+            return <List.Item></List.Item>;
           }}
         ></List>
       </Drawer>
@@ -62,23 +62,23 @@ function AppHeader() {
         title="Notifications"
         visible={notificationsOpen}
         onClose={() => {
-          setNotificationsOpen(false)
+          setNotificationsOpen(false);
         }}
         maskClosable
       >
         <List
           dataSource={orders}
-          renderItem={item => {
+          renderItem={(item) => {
             return (
               <List.Item>
                 <Typography.Text strong></Typography.Text> has been ordered!
               </List.Item>
-            )
+            );
           }}
         ></List>
       </Drawer>
     </div>
-  )
+  );
 }
 
-export default AppHeader
+export default AppHeader;
